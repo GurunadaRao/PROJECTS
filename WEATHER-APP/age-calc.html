@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Age Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+      width: 350px;
+      max-width: 90vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #185a9d;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+    input[type="date"] {
+      padding: 0.7rem 1rem;
+      border: 1.5px solid #43cea2;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+      background: #f3f6fa;
+      color: #185a9d;
+    }
+    input[type="date"]:focus {
+      border-color: #185a9d;
+    }
+    .calc-btn {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+      margin-top: 0.5rem;
+    }
+    .calc-btn:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+      box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+    }
+    .result-box {
+      width: 100%;
+      background: #f3f6fa;
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      color: #185a9d;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+      min-height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 400px) {
+      .container {
+        padding: 1.2rem 0.5rem;
+      }
+      .result-box {
+        font-size: 1rem;
+        padding: 0.8rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Age Calculator</h2>
+    <form id="ageForm">
+      <div>
+        <label for="dob">Enter your Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <button class="calc-btn" type="submit">Calculate Age</button>
+    </form>
+    <div class="result-box" id="result">
+      Your age will be displayed here.
+    </div>
+  </div>
+  <script>
+   const form = document.getElementById('ageForm');
+   const result = document.getElementById('result');
+   form.addEventListener('submit', (e) =>
+   {
+    e.preventDefault();
+
+    const dob = document.getElementById('dob').value;
+    const today = new Date();
+    const birthDate = new Date(dob);
+    const year = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    const days = today.getDate() - birthDate.getDate();
+    if(days<0){
+     m--;
+     const prevMonth = new Date(today.getFullYear(),today.getMonth(),0);
+     days+= prevMonth.getDate();
+    }
+    if(m<0){
+        year--;
+        m+=12;
+    }
+    result.textContent = `You are ${year} years, ${m} months, and ${days} days old.`;
+   });
+  </script>
+</body>
+</html>
