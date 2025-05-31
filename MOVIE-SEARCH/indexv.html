@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Gas Detection System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .typing-animation {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #4F46E5;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-100 via-indigo-50 to-white">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex items-center py-4 px-2">
+          <span class="font-semibold text-gray-800 text-lg">Smart Gas Detection System</span>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a href="#overview" class="nav-link py-4 px-2 text-gray-700 hover:text-indigo-600">Project Overview</a>
+          <a href="#hardware" class="nav-link py-4 px-2 text-gray-700 hover:text-indigo-600">Hardware</a>
+          <a href="#software" class="nav-link py-4 px-2 text-gray-700 hover:text-indigo-600">Software</a>
+          <a href="#bmc" class="nav-link py-4 px-2 text-gray-700 hover:text-indigo-600">BMC</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="pt-24 pb-12 bg-gradient-to-r from-indigo-500 to-purple-600">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="typing-animation text-4xl font-bold text-white inline-block">
+        Smart Gas Detection & Fire Accidents Prevention System
+      </h1>
+    </div>
+  </div>
+
+  <!-- Overview, Objectives, Working Principle, Features, Applications, Conclusion... -->
+
+  <!-- BMC Section -->
+  <section id="bmc" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Business Model Canvas</h2>
+
+      <!-- Core Canvas Blocks -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <!-- Key Partnerships -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Key Partnerships</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Hardware Component Manufacturers – Provide essential electronic parts.</li>
+            <li>IoT & Software Developers – Build app and alert systems.</li>
+            <li>Safety Certification Bodies – Approve product safety.</li>
+            <li>Marketing & Sales Partners – Promote and sell the product.</li>
+            <li>Government Bodies – Set safety regulations.</li>
+          </ul>
+        </div>
+        <!-- Key Activities -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Key Activities</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>IoT software development</li>
+            <li>Product development</li>
+            <li>Testing</li>
+            <li>Installation & maintenance</li>
+            <li>Data analysis</li>
+            <li>Marketing</li>
+          </ul>
+        </div>
+        <!-- Key Resources -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Key Resources</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Engineering Team</li>
+            <li>Hardware Components</li>
+            <li>Cloud Platform</li>
+            <li>App</li>
+            <li>Certifications</li>
+          </ul>
+        </div>
+        <!-- Value Propositions -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Value Propositions</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Real‐Time Gas Leak Detection</li>
+            <li>Automatic Preventive Actions</li>
+            <li>Immediate Alerts & Notifications</li>
+            <li>Cost‐Effective & Scalable</li>
+            <li>Enhanced Remote Monitoring & Controlled Kitchen Safety</li>
+          </ul>
+        </div>
+        <!-- Customer Relationships -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Customer Relationships</h3>
+          <p class="font-semibold text-gray-800 mb-2">B2B:</p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+            <li>Dedicated support & maintenance contracts for property managers.</li>
+            <li>Staff training on system use.</li>
+          </ul>
+          <p class="font-semibold text-gray-800 mb-2">B2C:</p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <li>Real‐time alerts & self‐service monitoring via app.</li>
+            <li>Resident feedback through the app.</li>
+          </ul>
+        </div>
+        <!-- Channels -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Channels</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li><span class="font-semibold">Awareness:</span>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Digital marketing (social media, SEO, Google Ads)</li>
+                <li>Influencer reviews / YouTube demos</li>
+                <li>Tech expos or smart home fairs</li>
+              </ul>
+            </li>
+            <li>Product website with demo videos & FAQs</li>
+            <li>Product trials or demos in stores (smart home solution providers/consultants)</li>
+            <li>Delivery</li>
+            <li>Mobile app for real‐time monitoring</li>
+            <li>Annual Maintenance Contract</li>
+          </ul>
+        </div>
+        <!-- Customer Segments -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Customer Segments</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li><strong>Residents</strong> – Especially urban households using LPG</li>
+            <li><strong>Gated Communities</strong> – Families with children or elderly</li>
+            <li><strong>Restaurants</strong> – Hotels, canteens, food delivery kitchens</li>
+            <li><strong>Industrial Clients / Small Factories</strong> – Warehouses storing flammable substances</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cost Structure & Revenue Streams -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Cost Structure -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Cost Structure</h3>
+          <p class="text-gray-700 leading-relaxed">
+            <strong>Component/Expense Approx. Cost per Unit (INR):</strong><br>
+            Hardware components (ESP32, sensor, servo, etc.): ₹1,200–₹1,800<br>
+            Assembly & Testing: ₹150–₹300<br>
+            Enclosure & Finishing: ₹150–₹300<br>
+            Packaging & Labeling: ₹100–₹200<br>
+            Marketing/Branding per unit: ₹100–₹200<br>
+            Miscellaneous (Transport, buffer, etc.): ₹100–₹150
+          </p>
+        </div>
+        <!-- Revenue Streams -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Revenue Streams</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Hardware Sales: One‐time purchase of devices.</li>
+            <li>Annual maintenance contracts: Subscriptions for annual product maintenance.</li>
+            <li>Installation: Optional service for installing devices.</li>
+            <li>Institutional Sales: Collaborating with apartments & warehouses storing flammable gases (LPG).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
